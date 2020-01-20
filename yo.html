@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Melli</title>
+</head>
+
+<body>
+  <script>
+
+    var pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+
+
+    var add5 = x => x + 5;
+    var multiply = (x, y) => x * y;
+    var multiplyAndAdd5 = pipeFunctions(multiply, add5);
+    multiplyAndAdd5(5, 2); // 15
+
+
+    
+
+    
+
+
+  </script>
+</body>
+
+</html>
